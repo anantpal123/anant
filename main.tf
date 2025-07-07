@@ -1,10 +1,15 @@
 terraform {
     required_providers {
-        aws = {
-        source  = "hashicorp/aws"
-        version = "~> 5.0"
+        azurerm = {
+        source  = "hashicorp/azurerm"
+        version = "~> 4.0"
         }
     }
     
     required_version = ">= 1.0"
+}
+resource "azurerm_resource_group" "riya-rg" {
+  name = var.rg_name 
+  location = var.location 
+
 }
